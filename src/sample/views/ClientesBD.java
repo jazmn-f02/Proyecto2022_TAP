@@ -1,12 +1,16 @@
 package sample.views;
 
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import sample.components.CustomeButtonCell;
 import sample.models.ClientesDAO;
 
 public class ClientesBD extends Stage{
@@ -15,10 +19,10 @@ public class ClientesBD extends Stage{
     private TableView<ClientesDAO> tbvClientes;
     private Button btnAgregar;
     private VBox vBox;
-    private ClientesDAO cteDAO;
+    private ClientesDAO clientesDAO;
 
     public ClientesBD(){
-        cteDAO = new ClientesDAO();
+        clientesDAO = new ClientesDAO();
         CrearUI();
         this.setTitle("Clientes Taqueria :)");
         this.setScene(escena);
@@ -27,9 +31,13 @@ public class ClientesBD extends Stage{
 
     private void CrearUI() {
         tbvClientes = new TableView<>();
-        btnAgregar = new Button("Agregar Cliente");
-        btnAgregar.setOnAction(event -> {});
+        btnAgregar=new Button("Agregar Cliente");
+        btnAgregar.setOnAction(event -> {
+            new ClienteFRM(tbvClientes);
+        });
         vBox = new VBox();
+        vBox.setSpacing(10);
+        vBox.setPadding(new Insets(10));
         vBox.getChildren().addAll(tbvClientes,btnAgregar);
         escena = new Scene(vBox,700,250);
         
@@ -37,20 +45,36 @@ public class ClientesBD extends Stage{
     }
 
     private void CrearTabla() {
-        TableColumn<ClientesDAO,Integer> tbcIdCliente = new TableColumn<>("ID");
-        tbcIdCliente.setCellValueFactory(new PropertyValueFactory<>("cvecte"));
+        TableColumn<ClientesDAO,Integer> tbcCveCliente = new TableColumn<>("Clave");
+        tbcCveCliente.setCellValueFactory(new PropertyValueFactory<>("cveCliente"));
 
-        TableColumn<ClientesDAO,String> tbcNomCliente = new TableColumn<>("NOMBRE");
-        tbcNomCliente.setCellValueFactory(new PropertyValueFactory<>("nomcte"));
+        TableColumn<ClientesDAO,String> tbcNombreC = new TableColumn<>("Nombre");
+        tbcNombreC.setCellValueFactory(new PropertyValueFactory<>("nombreC"));
 
-        TableColumn<ClientesDAO,String> tbcTelCliente = new TableColumn<>("TELEFONO");
-        tbcTelCliente.setCellValueFactory(new PropertyValueFactory<>("telcte"));
+        TableColumn<ClientesDAO,String> tbcTelC = new TableColumn<>("Teléfono");
+        tbcTelC.setCellValueFactory(new PropertyValueFactory<>("telC"));
 
-        TableColumn<ClientesDAO,String> tbcDirCliente = new TableColumn<>("DIRECCION");
-        tbcDirCliente.setCellValueFactory(new PropertyValueFactory<>("dircte"));
+        TableColumn<ClientesDAO,String> tbcDireccionC = new TableColumn<>("Dirección");
+        tbcDireccionC.setCellValueFactory(new PropertyValueFactory<>("direccionC"));
 
-        tbvClientes.getColumns().addAll(tbcIdCliente,tbcNomCliente,tbcTelCliente,tbcDirCliente);
-        tbvClientes.setItems(cteDAO.SELECCIONAR());
+        TableColumn<ClientesDAO, String> tbcEditar=new TableColumn<>("Editar");
+        tbcEditar.setCellFactory(new Callback<TableColumn<ClientesDAO, String>, TableCell<ClientesDAO, String>>() {
+            @Override
+            public TableCell<ClientesDAO, String> call(TableColumn<ClientesDAO, String> param) {
+                return new CustomeButtonCell(1);
+            }
+        });
+
+        TableColumn<ClientesDAO, String> tbcEliminar=new TableColumn<>("Eliminar");
+        tbcEliminar.setCellFactory(new Callback<TableColumn<ClientesDAO, String>, TableCell<ClientesDAO, String>>() {
+            @Override
+            public TableCell<ClientesDAO, String> call(TableColumn<ClientesDAO, String> param) {
+                return new CustomeButtonCell(2);
+            }
+        });
+
+        tbvClientes.getColumns().addAll(tbcCveCliente,tbcNombreC,tbcTelC,tbcDireccionC,tbcEditar,tbcEliminar);
+        tbvClientes.setItems(clientesDAO.Seleccionar());
 
     }
 

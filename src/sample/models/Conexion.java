@@ -6,8 +6,8 @@ import java.sql.DriverManager;
 public class Conexion {
 
     private static String server = "127.0.0.1";
-    private static String user   = "patron";
-    private static String pwd    = "123456";
+    private static String user   = "patrona";
+    private static String pwd    = "nose_soyaXonerrZ";
     private static String bd     = "taqueriadb";
 
     public static Connection conexion;

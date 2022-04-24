@@ -9,46 +9,46 @@ import java.sql.Statement;
 
 public class ClientesDAO {
 
-    private int cvecte;
-    private String nomcte;
-    private String telcte;
-    private String dircte;
+    private int cveCliente;
+    private String nombreC;
+    private String telC;
+    private String direccionC;
 
-    public int getCvecte() {
-        return cvecte;
+    public int getCveCliente() {
+        return cveCliente;
     }
 
-    public void setCvecte(int cvecte) {
-        this.cvecte = cvecte;
+    public void setCveCliente(int cveCliente) {
+        this.cveCliente = cveCliente;
     }
 
-    public String getNomcte() {
-        return nomcte;
+    public String getNombreC() {
+        return nombreC;
     }
 
-    public void setNomcte(String nomcte) {
-        this.nomcte = nomcte;
+    public void setNombreC(String nombreC) {
+        this.nombreC = nombreC;
     }
 
-    public String getTelcte() {
-        return telcte;
+    public String getTelC() {
+        return telC;
     }
 
-    public void setTelcte(String telcte) {
-        this.telcte = telcte;
+    public void setTelC(String telC) {
+        this.telC = telC;
     }
 
-    public String getDircte() {
-        return dircte;
+    public String getDireccionC() {
+        return direccionC;
     }
 
-    public void setDircte(String dircte) {
-        this.dircte = dircte;
+    public void setDireccionC(String direccionC) {
+        this.direccionC = direccionC;
     }
 
-    public void INSERTAR(){
-        String query = "INSERT INTO tblclientes (nomcte,telcte,dircte) " +
-                "VALUES('"+this.nomcte+"','"+this.telcte+"','"+this.dircte+"')";
+    public void Insertar(){
+        String query = "INSERT INTO Clientes (nombreC,telC,direccionC) " +
+                "VALUES('"+this.nombreC +"','"+this.telC +"','"+this.direccionC +"')";
         try {
             Statement stmt = Conexion.conexion.createStatement();
             stmt.executeUpdate(query);
@@ -57,9 +57,9 @@ public class ClientesDAO {
         }
     }
 
-    public void ACTUALIZAR(){
-        String query = "UPDATE tblclientes SET nomcte='"+this.nomcte+"',telcte='"+this.telcte+"'," +
-                "directe='"+this.dircte+"' WHERE cvecte = "+this.cvecte;
+    public void Actualizar(){
+        String query = "UPDATE Clientes SET nombreC='"+this.nombreC +"',telC='"+this.telC +"'," +
+                "direccionC='"+this.direccionC +"' WHERE cveCliente = "+this.cveCliente;
         try {
             Statement stmt = Conexion.conexion.createStatement();
             stmt.executeUpdate(query);
@@ -68,8 +68,8 @@ public class ClientesDAO {
         }
     }
 
-    public void ELIMINAR(){
-        String query = "DELETE FROM tblclientes WHERE cvecte = "+this.cvecte;
+    public void Eliminar(){
+        String query = "DELETE FROM Clientes WHERE cveCliente = "+this.cveCliente;
         try {
             Statement stmt = Conexion.conexion.createStatement();
             stmt.executeUpdate(query);
@@ -77,20 +77,20 @@ public class ClientesDAO {
             e.printStackTrace();
         }
     }
-    public ObservableList<ClientesDAO> SELECCIONAR(){
+    public ObservableList<ClientesDAO> Seleccionar(){
 
         ObservableList<ClientesDAO> listaC = FXCollections.observableArrayList();
         ClientesDAO objC;
-        String query = "SELECT * FROM tblclientes ORDER BY nomcte";
+        String query = "SELECT * FROM Clientes ORDER BY cveCliente";
         try {
             Statement stmt = Conexion.conexion.createStatement();
             ResultSet res = stmt.executeQuery(query);
             while( res.next() ){
                 objC = new ClientesDAO();
-                objC.setCvecte(res.getInt("cvecte"));
-                objC.setNomcte(res.getString("nomcte"));
-                objC.setTelcte(res.getString("telcte"));
-                objC.setDircte(res.getString("dircte"));
+                objC.setCveCliente(res.getInt("cveCliente"));
+                objC.setNombreC(res.getString("nombreC"));
+                objC.setTelC(res.getString("telC"));
+                objC.setDireccionC(res.getString("direccionC"));
                 listaC.add(objC);
             }
         } catch (SQLException e) {
@@ -98,7 +98,7 @@ public class ClientesDAO {
         }
         return listaC;
 
-    } // RECUPERAR TODOS LOS REGISTROS
+    } //Recuperar todos los registros
 
-    public void SELECCIONARBYID(){}
+    public void SeleccionarByID(){}
 }

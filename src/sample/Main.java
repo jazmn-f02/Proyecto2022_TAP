@@ -3,10 +3,7 @@ package sample;
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -48,17 +45,17 @@ public class Main extends Application implements EventHandler{
         primaryStage.addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST, new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) {
-                Alert alerta = new Alert(Alert.AlertType.WARNING);
+                /*Alert alerta = new Alert(Alert.AlertType.WARNING);
                 alerta.setTitle("Bienvenidos :)");
                 alerta.setHeaderText("Mensaje del Sistema :)");
                 alerta.setContentText("Manejo de eventos de la ventana usando dialogos");
-                alerta.showAndWait();
+                alerta.showAndWait();*/
             }
         });
 
         Scene escena = new Scene(vBox,300,200);
         escena.getStylesheets().add(getClass().getResource("css/styles.css").toExternalForm());
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Tópicos Avanzados de Programación Ene-Jun 2022");
         primaryStage.setScene(escena);
         primaryStage.show();
         primaryStage.setMaximized(true);
@@ -82,10 +79,10 @@ public class Main extends Application implements EventHandler{
 
     @Override
     public void handle(Event event) {
-        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        /*Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Bienvenidos :)");
         alerta.setHeaderText("Mensaje del Sistema :)");
         alerta.setContentText("Manejo de eventos de la ventana usando dialogos");
-        alerta.showAndWait();
+        alerta.showAndWait();*/
     }
 }
