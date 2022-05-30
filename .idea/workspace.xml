@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Commit message">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="5 de abril">
+      <change afterPath="$PROJECT_DIR$/src/sample/components/Corredor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/css/styless.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/bebida.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/costra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/especialidad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/fondaco.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/guarnizo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/mantel.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/postre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/quesadilla.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/taco.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/torta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/images/volcan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/models/EmpleadosDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/models/QuesadillasDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/models/TacosDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/models/TortasDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/views/EmpleadosBD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/views/EmpleadosFRM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/views/Pista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/views/QuesadillasBD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/views/TacosBD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/views/Taqueria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/views/TortasBD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto2022_TAP/sample/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto2022_TAP/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto2022_TAP/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto2022_TAP/sample/components/CustomeButtonCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto2022_TAP/sample/components/CustomeButtonCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto2022_TAP/sample/views/ClienteFRM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto2022_TAP/sample/views/ClienteFRM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Proyecto2022_TAP/sample/views/ClientesBD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Proyecto2022_TAP/sample/views/ClientesBD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/components/CustomeButtonCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/components/CustomeButtonCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/views/ClienteFRM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/views/ClienteFRM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/views/ClientesBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/views/ClientesBD.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +104,11 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -109,7 +147,9 @@
     <option name="height" value="600" />
   </component>
   <component name="ProjectId" id="279wjyJiLq3kPo6y3aBQMY2IItV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -179,6 +219,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -186,6 +228,9 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -194,12 +239,15 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fanny\OneDrive\Documentos\Proyecto2022_TAP\src\sample\css" />
       <recent name="$PROJECT_DIR$/src/sample/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fanny\OneDrive\Documentos\Proyecto2022_TAP\src\sample\images" />
       <recent name="C:\Users\fanny\IdeaProjects\TAP_Ene_Jun_2022_1\src\sample\images" />
       <recent name="$PROJECT_DIR$/src/sample/images" />
     </key>
@@ -299,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650836082560</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="5 de abril">
+      <created>1650836402342</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650836402342</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -356,9 +411,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Commit message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit message" />
+    <MESSAGE value="5 de abril" />
+    <option name="LAST_COMMIT_MESSAGE" value="5 de abril" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

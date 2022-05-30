@@ -1,11 +1,17 @@
 package sample.components;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableCell;
 import sample.models.ClientesDAO;
+import sample.views.ClienteFRM;
+
+import java.util.Optional;
 
 public class CustomeButtonCell extends TableCell<ClientesDAO, String> {
 
+    private ClientesDAO objC;
     private Button btnCelda;
     int opc;
 
@@ -15,6 +21,27 @@ public class CustomeButtonCell extends TableCell<ClientesDAO, String> {
             btnCelda=new Button("Editar");
         else
         btnCelda=new Button("Eliminar");
+        btnCelda.setOnAction(event -> eventoBoton(opc));
+    }
+
+    private void eventoBoton(int opc) {
+        objC=CustomeButtonCell.this.getTableView().getItems().get(CustomeButtonCell.this.getIndex());
+        switch (opc){
+            case 1: new ClienteFRM(CustomeButtonCell.this.getTableView(),objC); break;
+            case 2:
+                Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Mensaje del sistema");
+                alert.setHeaderText("Confirmación de eliminación");
+                alert.setContentText("¿Está seguro de eliminar el registro?");
+
+                Optional<ButtonType> result=alert.showAndWait();
+
+                if(result.get()==ButtonType.OK) {
+                    objC.Eliminar();
+                    CustomeButtonCell.this.getTableView().setItems(objC.Seleccionar());
+                    CustomeButtonCell.this.getTableView().refresh();
+                }break;
+        }
     }
 
     @Override

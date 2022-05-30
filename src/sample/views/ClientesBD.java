@@ -33,7 +33,7 @@ public class ClientesBD extends Stage{
         tbvClientes = new TableView<>();
         btnAgregar=new Button("Agregar Cliente");
         btnAgregar.setOnAction(event -> {
-            new ClienteFRM(tbvClientes);
+            new ClienteFRM(tbvClientes,null);
         });
         vBox = new VBox();
         vBox.setSpacing(10);

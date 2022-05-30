@@ -9,17 +9,16 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import sample.models.Conexion;
-import sample.views.ClientesBD;
 import sample.views.Loteria;
 import sample.views.Parseador;
+import sample.views.Taqueria;
 
 public class Main extends Application implements EventHandler{
 
     private MenuBar mnbPrincipal;
     private Menu menCompetencia1, menCompetencia2;
-    private MenuItem mitLoteria, mitParseador, mitClientes;
+    private MenuItem mitLoteria, mitParseador, mitClientes, mitPista;
     private VBox vBox;
 
     @Override
@@ -39,19 +38,23 @@ public class Main extends Application implements EventHandler{
         mitClientes.setOnAction(event -> Eventos(3));
         menCompetencia1.getItems().addAll(mitLoteria,mitParseador,mitClientes);
 
+        mitPista=new MenuItem("Pista de Carreras");
+        mitPista.setOnAction(event -> Eventos(4));
+        menCompetencia2.getItems().add(mitPista);
+
         vBox.getChildren().add(mnbPrincipal);
 
-        primaryStage.addEventHandler(WindowEvent.WINDOW_SHOWING,this);
-        primaryStage.addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST, new EventHandler<WindowEvent>() {
+        /*primaryStage.addEventHandler(WindowEvent.WINDOW_SHOWING,this);
+          primaryStage.addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST, new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent event) {
                 /*Alert alerta = new Alert(Alert.AlertType.WARNING);
                 alerta.setTitle("Bienvenidos :)");
                 alerta.setHeaderText("Mensaje del Sistema :)");
                 alerta.setContentText("Manejo de eventos de la ventana usando dialogos");
-                alerta.showAndWait();*/
+                alerta.showAndWait();
             }
-        });
+        });*/
 
         Scene escena = new Scene(vBox,300,200);
         escena.getStylesheets().add(getClass().getResource("css/styles.css").toExternalForm());
@@ -68,7 +71,8 @@ public class Main extends Application implements EventHandler{
         switch(i){
             case 1: new Loteria(); break;
             case 2: new Parseador(); break;
-            case 3: new ClientesBD(); break;
+            case 3: new Taqueria();
+            //case 4: new Pista(); break;
         }
     }
 

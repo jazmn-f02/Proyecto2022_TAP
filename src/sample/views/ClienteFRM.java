@@ -20,9 +20,9 @@ public class ClienteFRM extends Stage {
     private ClientesDAO objC;
     private TableView<ClientesDAO> tbvClientes;
 
-    public ClienteFRM(TableView<ClientesDAO> tbv){
+    public ClienteFRM(TableView<ClientesDAO> tbv, ClientesDAO objC){
+        this.objC=(objC==null)?new ClientesDAO():objC;
         this.tbvClientes=tbv;
-        objC=new ClientesDAO();
         CrearUI();
         this.setTitle("Agregar Cliente");
         this.setScene(scene);
@@ -34,17 +34,24 @@ public class ClienteFRM extends Stage {
         vBox.setSpacing(10);
         vBox.setPadding(new Insets(10));
         txtNombre=new TextField();
+        txtNombre.setText(this.objC.getNombreC());
         lblN=new Label("Nombre:");
         txtTelefono =new TextField();
+        txtTelefono.setText(this.objC.getTelC());
         lblT=new Label("Teléfono:");
         txtDireccion =new TextField();
+        txtDireccion.setText(this.objC.getDireccionC());
         lblD=new Label("Dirección:");
         btnSave=new Button("Guardar Cliente");
         btnSave.setOnAction(event -> {
             objC.setNombreC(txtNombre.getText());
             objC.setTelC(txtTelefono.getText());
             objC.setDireccionC(txtDireccion.getText());
-            objC.Insertar();
+
+            if(objC.getCveCliente()>0)
+                objC.Actualizar();
+            else
+                objC.Insertar();
 
             tbvClientes.setItems(objC.Seleccionar());
             tbvClientes.refresh();
